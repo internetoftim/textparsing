@@ -88,10 +88,8 @@ def extract_quarter(input_soup):
         for element in temp.findAll('p'):
             if (pd.notnull(element.text) and element.text!=''):
                 if( re.search('q[1-4]\s*[0-9]{4}',element.contents[0],flags=re.IGNORECASE)):
-                    print(element.contents[0])
                     temp_string = re.match(string=element.contents[0],\
                                            pattern='[^qQ]*([qQ][1-4])\s*[0-9]{4}.*')
-                    print(temp_string.group(1))
                     call_title = element.contents[0].split()
                     return temp_string.group(1)
                 
@@ -99,10 +97,8 @@ def extract_quarter(input_soup):
         for element in temp.findAll('a'):
             if (pd.notnull(element.text) and element.text!=''):
                 if( re.search('q[1-4]\s*[0-9]{4}',element.contents[0],flags=re.IGNORECASE)):
-                    print(element.contents[0])
                     temp_string = re.match(string=element.contents[0],\
                                            pattern='[^qQ]*([qQ][1-4])\s*[0-9]{4}.*')
-                    print(temp_string.group(1))
                     call_title = element.contents[0].split()
                     return temp_string.group(1)                
         return None
@@ -117,10 +113,8 @@ def extract_year(input_soup):
         for element in temp.findAll('p'):
             if (pd.notnull(element.text) and element.text!=''):
                 if( re.search('q[1-4]\s*[0-9]{4}',element.contents[0],flags=re.IGNORECASE)):
-                    print(element.contents[0])
                     temp_string = re.match(string=element.contents[0],\
                                            pattern='[^qQ]*[qQ][1-4]\s*([0-9]{4}).*')
-                    print(temp_string.group(1))
                     call_title = element.contents[0].split()
                     return temp_string.group(1)
                 
@@ -128,10 +122,8 @@ def extract_year(input_soup):
         for element in temp.findAll('a'):
             if (pd.notnull(element.text) and element.text!=''):
                 if( re.search('q[1-4]\s*[0-9]{4}',element.contents[0],flags=re.IGNORECASE)):
-                    print(element.contents[0])
                     temp_string = re.match(string=element.contents[0],\
                                            pattern='[^qQ]*[qQ][1-4]\s*([0-9]{4}).*')
-                    print(temp_string.group(1))
                     call_title = element.contents[0].split()
                     return temp_string.group(1)                
         return None
